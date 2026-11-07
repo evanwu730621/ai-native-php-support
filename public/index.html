@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI 文檔與客服中心</title>
+    <link rel="stylesheet" href="./app.css">
+</head>
+<body>
+    <main class="layout">
+        <aside>
+            <h1>AI Ops</h1>
+            <nav>
+                <button class="nav-button active" data-panel="documents">智慧文檔</button>
+                <button class="nav-button" data-panel="support">客服助理</button>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <section id="documents" class="panel active">
+                <header>
+                    <p class="eyebrow">Document intelligence</p>
+                    <h2>智慧文檔分析</h2>
+                </header>
+                <div class="grid">
+                    <form id="document-form" class="card">
+                        <label for="document-text">貼上文檔文字</label>
+                        <textarea id="document-text" rows="12" placeholder="貼上合約、會議紀錄、客訴內容或其他文字…"></textarea>
+                        <label for="document-file">或上傳 TXT / PDF（最大 5MB）</label>
+                        <input id="document-file" type="file" accept=".txt,.pdf">
+                        <progress id="chunk-progress" value="0" max="100" hidden></progress>
+                        <p id="chunk-status" class="placeholder"></p>
+                        <button type="submit">開始分析</button>
+                    </form>
+                    <article id="document-result" class="card result">
+                        <p class="placeholder">分析結果會顯示在這裡。</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="support" class="panel">
+                <header>
+                    <p class="eyebrow">Customer support</p>
+                    <h2>自動化客服</h2>
+                </header>
+                <div class="grid support-grid">
+                    <div class="card chat">
+                        <div id="chat-history" class="chat-history"></div>
+                        <form id="support-form">
+                            <textarea id="support-message" rows="3" placeholder="輸入客戶訊息…"></textarea>
+                            <button type="submit">送出</button>
+                        </form>
+                    </div>
+                    <aside id="ticket-result" class="card result">
+                        <p class="placeholder">工單分類與建議會顯示在這裡。</p>
+                    </aside>
+                </div>
+            </section>
+        </section>
+    </main>
+    <script src="./app.js"></script>
+</body>
+</html>

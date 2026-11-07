@@ -1,0 +1,48 @@
+{
+    "name": "testai/ai-native-app",
+    "description": "Lightweight AI-native PHP application built with Slim.",
+    "type": "project",
+    "require": {
+        "php": "^8.2",
+        "monolog/monolog": "^3.5",
+        "openai-php/client": "^0.10",
+        "php-di/php-di": "^7.0",
+        "php-di/slim-bridge": "^3.4",
+        "slim/psr7": "^1.6",
+        "slim/slim": "^4.13",
+        "smalot/pdfparser": "2.12",
+        "symfony/cache": "^7.0",
+        "symfony/http-client": "^7.4",
+        "symfony/validator": "^7.0",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0",
+        "squizlabs/php_codesniffer": "^3.8",
+        "phpstan/phpstan": "^1.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "check": [
+            "@phpcs",
+            "@phpstan"
+        ],
+        "phpcs": "phpcs --standard=PSR12 src config public tests",
+        "phpstan": "phpstan analyse src config public tests --level=8"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        },
+        "sort-packages": true
+    }
+}

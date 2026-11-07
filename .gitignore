@@ -1,0 +1,26 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies
+/vendor/
+
+# Runtime data and logs
+/storage/
+*.log
+*.tmp
+*.cache
+.phpunit.cache/
+coverage/
+
+# IDE and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Windows and PHP temporary files
+*.pid
+*.seed
+*.swp

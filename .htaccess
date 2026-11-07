@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Serve existing files from the public directory when accessed below /testai.
+RewriteCond %{REQUEST_URI} ^/testai/(.*)$
+RewriteCond %{DOCUMENT_ROOT}/testai/public/%1 -f
+RewriteRule ^ /testai/public/%1 [END]
+
+# Forward application routes to the front controller.
+RewriteRule ^(.*)$ public/index.php [END]
